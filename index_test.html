@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="jp">
+
+<head>
+  <meta charset="utf-8">
+  <title>AngularElementsSample</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+  <app-hello name="Angular Elements!">loading</app-hello>
+  <script src="dist/angular-elements-sample/runtime-es2015.js" type="module"></script>
+  <script src="dist/angular-elements-sample/runtime-es5.js" nomodule defer></script>
+  <script src="dist/angular-elements-sample/polyfills-es5.js" nomodule defer></script>
+  <script src="dist/angular-elements-sample/polyfills-es2015.js" type="module"></script>
+  <script src="dist/angular-elements-sample/styles-es2015.js" type="module"></script>
+  <script src="dist/angular-elements-sample/styles-es5.js" nomodule defer></script>
+  <script src="dist/angular-elements-sample/scripts.js" defer></script>
+  <script src="dist/angular-elements-sample/vendor-es2015.js" type="module"></script>
+  <script src="dist/angular-elements-sample/vendor-es5.js" nomodule defer></script>
+  <script src="dist/angular-elements-sample/main-es2015.js" type="module"></script>
+  <script src="dist/angular-elements-sample/main-es5.js" nomodule defer></script>
+
+  <script>
+    const appHello = document.querySelector('app-hello');
+    appHello.addEventListener('clickButton', (e) => {
+      console.log(e.detail);
+      appHello.setAttribute('name', e.detail);
+    });
+  </script>
+</body>
+
+</html>

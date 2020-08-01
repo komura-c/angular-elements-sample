@@ -4,24 +4,23 @@ import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
-import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
-    FormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule
   ],
   providers: [],
-  entryComponents: [AppComponent, HelloComponent, FormComponent]
+  entryComponents: [AppComponent, HelloComponent]
 })
 export class AppModule {
-  constructor(public injector: Injector) { }
+  constructor(private injector: Injector) { }
   ngDoBootstrap() {
     customElements.define('app-hello', createCustomElement(HelloComponent, { injector: this.injector }));
-    customElements.define('app-form', createCustomElement(FormComponent, { injector: this.injector }));
   }
 }
