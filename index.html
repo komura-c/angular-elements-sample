@@ -7,22 +7,25 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <app-form></app-form>
-  <app-hello></app-hello>
+  <app-hello name="Angular Elements!">loading</app-hello>
   <script src="angular-elements-sample/runtime-es2015.js" type="module"></script>
   <script src="angular-elements-sample/runtime-es5.js" nomodule defer></script>
   <script src="angular-elements-sample/polyfills-es5.js" nomodule defer></script>
   <script src="angular-elements-sample/polyfills-es2015.js" type="module"></script>
-  <script src="angular-elements-sample/styles-es2015.js" type="module"></script>
-  <script src="angular-elements-sample/styles-es5.js" nomodule defer></script>
   <script src="angular-elements-sample/scripts.js" defer></script>
-  <script src="angular-elements-sample/vendor-es2015.js" type="module"></script>
-  <script src="angular-elements-sample/vendor-es5.js" nomodule defer></script>
   <script src="angular-elements-sample/main-es2015.js" type="module"></script>
   <script src="angular-elements-sample/main-es5.js" nomodule defer></script>
+  <script>
+    const appHello = document.querySelector('app-hello');
+    appHello.addEventListener('clickButton', (e) => {
+      console.log(e.detail);
+      appHello.setAttribute('name', e.detail);
+    });
+  </script>
 </body>
 
 </html>
